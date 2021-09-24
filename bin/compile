@@ -1,0 +1,3 @@
+#!/bin/bash
+# usage: bin/compile <build-dir> <cache-dir> <env-dir>
+# Everything is done by heroku-buildpack-node-js

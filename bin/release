@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# bin/release <build-dir>
+
+build=$(cd "$1/" && pwd)
+
+if [ -f "$build"/dist-rails/*.gem ]; then
+  filename=($build/dist-rails/*.gem)
+  filename=$(basename "$filename")
+else
+  exit 1
+fi
+
+cat << EOF
+---
+package: dist-rails/$filename
+kind: ruby
+EOF
